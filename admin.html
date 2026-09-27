@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="C2V3ZA Tools GitHub admin area.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://github.com https://avatars.githubusercontent.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>C2V3ZA Tools — GitHub Admin</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="Zur Startseite"><span class="brand-mark" aria-hidden="true">◎</span><span>C2V3ZA Tools</span></a>
+    <nav class="nav-links" aria-label="Admin Navigation"><a href="./">Public</a><a class="nav-button" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="admin-shell shell">
+    <section id="login-panel" class="admin-panel auth-panel">
+      <div class="eyebrow">PRIVATE / GITHUB ADMIN</div>
+      <h1>Sign in.</h1>
+      <p>GitHub Pages ist statisch. Deshalb erfolgt der Admin-Login direkt über dein GitHub-Konto. Das Token wird nur im Arbeitsspeicher dieses Tabs gehalten und nicht gespeichert.</p>
+      <form id="login-form" novalidate>
+        <label>GitHub Username<input id="username" name="username" type="text" autocomplete="username" maxlength="64" required></label>
+        <label>Fine-grained GitHub Token<input id="token" name="token" type="password" autocomplete="off" spellcheck="false" maxlength="500" required></label>
+        <div class="helper">Empfohlen: Fine-grained Token, nur für dieses Repository, mit <strong>Contents: Read and write</strong>.</div>
+        <button class="button primary" type="submit">GitHub verifizieren</button>
+        <div id="login-status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="dashboard" class="admin-panel dashboard hidden">
+      <div class="dash-head">
+        <div>
+          <div class="eyebrow">CONTROL ROOM</div>
+          <h1>Publish tools.</h1>
+          <p id="session-label">GitHub-Session aktiv.</p>
+        </div>
+        <button id="logout" class="button ghost" type="button">Logout</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <form id="upload-form" class="form-card" enctype="multipart/form-data" novalidate>
+          <h2>New tool</h2>
+          <label>Tool name<input id="tool-name" name="name" maxlength="80" required></label>
+          <label>Category<input id="tool-category" name="category" maxlength="40" placeholder="Security / Dev / Research" required></label>
+          <label>Description<textarea id="tool-description" name="description" rows="5" maxlength="280"></textarea></label>
+          <label>ZIP package<input id="tool-file" name="file" type="file" accept=".zip,application/zip" required></label>
+          <label>Screenshots <span class="label-note">PNG / JPG / WebP · bis zu 4 · 5 MB pro Bild</span><input id="tool-screenshots" name="screenshots" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" multiple></label>
+          <button class="button primary" type="submit">Auf GitHub veröffentlichen</button>
+          <div id="upload-status" class="status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="form-card">
+          <div class="list-head"><h2>Published</h2><span id="tool-count">0</span></div>
+          <div id="admin-tools" class="admin-tools" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="C2V3ZA Tools — private toolbox on GitHub Pages.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>C2V3ZA Tools — Private Toolbox</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="C2V3ZA Tools Startseite">
+      <span class="brand-mark" aria-hidden="true">◎</span>
+      <span>C2V3ZA Tools</span>
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a class="nav-button" href="admin.html">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> PRIVATE / GITHUB TOOLBOX</div>
+        <h1>Tools.<br>Research.<br><span>Your workflow.</span></h1>
+        <p class="hero-text">Deine eigenen Tools, Pakete und Screenshots an einem Ort. Gehostet über GitHub Pages mit einem Admin-Bereich, der nur dein GitHub-Konto akzeptiert.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tools">Tools ansehen</a>
+          <a class="button ghost" href="admin.html">Admin Login</a>
+        </div>
+        <div class="trust-row" aria-label="Sicherheitsmerkmale">
+          <span>◈ GitHub Hosted</span>
+          <span>▣ Admin Only</span>
+          <span>⊙ ZIP + Screenshots</span>
+        </div>
+      </div>
+
+      <div class="console-card" aria-label="Toolbox Vorschau">
+        <div class="console-top">
+          <div class="console-brand"><span class="brand-mark small">◎</span> C2V3ZA Tools</div>
+          <span class="version-badge">GH</span>
+        </div>
+        <div class="console-body">
+          <div class="prompt-box">UPLOAD. PREVIEW. PUBLISH.<br><small>Only your GitHub account can publish.</small></div>
+          <div class="console-title">YOUR GITHUB WORKSPACE.</div>
+          <p>Tool-ZIPs und sichere Bildformate werden direkt in dein Repository geschrieben. Nichts muss lokal als Server laufen.</p>
+          <div class="plan-box">
+            <div class="plan-label">PUBLISH FLOW</div>
+            <div class="plan-line"><b>01</b> GitHub Admin Login</div>
+            <div class="plan-line"><b>02</b> ZIP + Screenshots hochladen</div>
+            <div class="plan-line"><b>03</b> Repository aktualisieren</div>
+          </div>
+          <div class="console-input">
+            <span>GitHub Pages ready.</span>
+            <span class="send-orb">↑</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="tools-section shell">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">CAPABILITIES</div>
+          <h2>Deine Tools.</h2>
+        </div>
+        <p class="section-note">Jedes Tool kann einen Download und bis zu vier Screenshots haben.</p>
+      </div>
+      <div id="tools-grid" class="tools-grid" aria-live="polite">
+        <div class="loading-card">Lade Tool-Index…</div>
+      </div>
+    </section>
+
+    <section id="about" class="feature-strip shell">
+      <div class="feature"><span>01</span><strong>GitHub Pages</strong><p>Die komplette öffentliche Seite besteht aus statischen Dateien.</p></div>
+      <div class="feature"><span>02</span><strong>Admin via GitHub</strong><p>Der Admin wird über dein GitHub-Konto und ein nur im Browser gehaltenes Token authentifiziert.</p></div>
+      <div class="feature"><span>03</span><strong>Safe previews</strong><p>Nur PNG, JPEG und WebP werden als Screenshots akzeptiert; ZIPs werden nur als Download angeboten.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <span>C2V3ZA Tools / GitHub Pages</span>
+    <span>© <span id="year"></span></span>
+  </footer>
+
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
