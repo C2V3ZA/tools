@@ -1,0 +1,22 @@
+{
+  "name": "c2v3za-tools-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dark red cybersecurity-inspired tools website with a single-admin upload area.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "hash-password": "node scripts/hash-password.js",
+    "check": "node --check server.js && node --check public/app.js && node --check public/admin.js && node --check scripts/hash-password.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2"
+  }
+}

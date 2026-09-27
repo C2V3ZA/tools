@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Admin area for the private C2V3ZA Tools instance.">
+  <title>C2V3ZA Tools — Admin</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <header class="site-header shell">
+    <a class="brand" href="./" aria-label="Zur Startseite"><span class="brand-mark" aria-hidden="true">◎</span><span>C2V3ZA Tools</span></a>
+    <nav class="nav-links" aria-label="Admin navigation"><a href="./">Public</a><a class="nav-button" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="admin-shell shell">
+    <section id="login-panel" class="admin-panel auth-panel">
+      <div class="eyebrow">PRIVATE / ADMIN</div>
+      <h1>Sign in.</h1>
+      <p>Nur der konfigurierte Admin-Account kann Tools hochladen oder löschen.</p>
+      <form id="login-form" autocomplete="on" novalidate>
+        <label>Username<input id="username" name="username" type="text" autocomplete="username" maxlength="64" required></label>
+        <label>Password<input id="password" name="password" type="password" autocomplete="current-password" maxlength="200" required></label>
+        <button class="button primary" type="submit">Login</button>
+        <div id="login-status" class="status" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <section id="dashboard" class="admin-panel dashboard hidden">
+      <div class="dash-head">
+        <div>
+          <div class="eyebrow">CONTROL ROOM</div>
+          <h1>Publish tools.</h1>
+          <p>ZIP-only uploads · 25 MB default limit · server-side access control</p>
+        </div>
+        <button id="logout" class="button ghost">Logout</button>
+      </div>
+
+      <div class="dashboard-grid">
+        <form id="upload-form" class="form-card" enctype="multipart/form-data">
+          <h2>New tool</h2>
+          <label>Tool name<input id="tool-name" name="name" maxlength="80" required></label>
+          <label>Category<input id="tool-category" name="category" maxlength="40" placeholder="Security / Dev / Research" required></label>
+          <label>Description<textarea id="tool-description" name="description" rows="5" maxlength="280"></textarea></label>
+          <label>ZIP package<input id="tool-file" name="file" type="file" accept=".zip,application/zip" required></label>
+          <label>Screenshots <span class="label-note">PNG / JPG / WebP · bis zu 4 Bilder · 5 MB pro Bild</span><input id="tool-screenshots" name="screenshots" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" multiple></label>
+          <button class="button primary" type="submit">Publish tool</button>
+          <div id="upload-status" class="status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="form-card">
+          <div class="list-head"><h2>Published</h2><span id="tool-count">0</span></div>
+          <div id="admin-tools" class="admin-tools" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>

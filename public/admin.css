@@ -1,0 +1,43 @@
+.admin-shell { position: relative; z-index: 1; padding: 70px 0 110px; }
+.admin-panel {
+  border: 1px solid rgba(255, 44, 50, .22);
+  border-radius: 22px;
+  background: rgba(13, 3, 5, .91);
+  box-shadow: 0 30px 80px rgba(0,0,0,.28);
+}
+.auth-panel { max-width: 520px; margin: 0 auto; padding: 34px; }
+.admin-panel h1 { margin: 14px 0 10px; font-size: clamp(42px, 7vw, 70px); letter-spacing: -.05em; }
+.admin-panel p { color: #81777a; line-height: 1.6; }
+form { display: grid; gap: 14px; }
+label { display: grid; gap: 8px; color: #d9d0d2; font-size: 12px; font-weight: 700; }
+.label-note { color: #756c6f; font-weight: 500; }
+input, textarea, select {
+  width: 100%; color: #eee7e8; background: #0d0506;
+  border: 1px solid rgba(255, 44, 50, .18); border-radius: 12px; outline: none;
+  padding: 13px 14px;
+}
+input:focus, textarea:focus, select:focus { border-color: rgba(255, 44, 50, .7); box-shadow: 0 0 0 3px rgba(255, 44, 50, .09); }
+textarea { resize: vertical; min-height: 120px; }
+input[type="file"] { padding: 10px; }
+.status { min-height: 18px; color: #8d8386; font-size: 12px; }
+.status.error { color: #ff6469; }
+.status.success { color: #a9aaa2; }
+.hidden { display: none !important; }
+.dashboard { padding: 28px; }
+.dash-head { display: flex; justify-content: space-between; gap: 24px; align-items: start; margin-bottom: 24px; }
+.dash-head h1 { margin-bottom: 4px; font-size: clamp(40px, 6vw, 62px); }
+.dash-head p { margin: 0; font-size: 13px; }
+.dashboard-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 14px; }
+.form-card { padding: 22px; border: 1px solid rgba(255,255,255,.08); border-radius: 16px; background: rgba(4, 2, 3, .54); }
+.form-card h2 { margin: 0 0 18px; font-size: 18px; }
+.list-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.list-head h2 { margin: 0; }
+#tool-count { color: #ff6469; font-size: 12px; }
+.admin-tools { display: grid; gap: 10px; max-height: 560px; overflow: auto; padding-right: 2px; }
+.admin-tool { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center; padding: 14px; border: 1px solid rgba(255,44,50,.13); border-radius: 13px; background: rgba(13,3,5,.62); }
+.admin-tool h3 { margin: 0 0 6px; font-size: 14px; }
+.admin-tool p { margin: 0; color: #756c6f; font-size: 11px; }
+.delete-btn { border: 1px solid rgba(255,44,50,.22); background: transparent; color: #ff666b; border-radius: 10px; padding: 8px 10px; cursor: pointer; }
+.delete-btn:hover { background: rgba(255,44,50,.08); }
+@media (max-width: 860px) { .dashboard-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .admin-shell { padding-top: 40px; } .auth-panel, .dashboard { padding: 20px; } .dash-head { flex-direction: column; } }
