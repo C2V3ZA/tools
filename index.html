@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#07090b">
-  <meta name="description" content="C2V3ZA Tools — private collection of tools and projects.">
+  <meta name="theme-color" content="#050607">
+  <meta name="description" content="C2V3ZA Tools — private collection of tools and utilities.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self';">
   <title>C2V3ZA Tools</title>
@@ -15,124 +15,52 @@
   <script src="./app.js" defer></script>
 </head>
 <body>
-  <div class="site-bg" aria-hidden="true"><div class="grid"></div><div class="glow glow-a"></div><div class="glow glow-b"></div></div>
-
-  <header class="header">
-    <a class="brand" href="./" aria-label="C2V3ZA Tools">
-      <span class="brand-symbol">C2</span>
-      <span class="brand-text"><strong>C2V3ZA</strong><small>TOOLS</small></span>
-    </a>
-
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#tools" data-i18n="nav.tools">Tools</a>
-      <a href="#about" data-i18n="nav.about">About</a>
-      <a href="https://github.com/C2V3ZA/tools" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-      <label class="lang-control">
-        <span class="sr-only" data-i18n="language.label">Language</span>
-        <select id="languageSelect" aria-label="Language">
-          <option value="en">EN</option>
-          <option value="de">DE</option>
-        </select>
-      </label>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <div class="eyebrow"><span></span><span data-i18n="hero.eyebrow">PRIVATE TOOL COLLECTION</span></div>
-        <h1>C2V3ZA <em>TOOLS.</em></h1>
-        <p class="hero-lead" data-i18n="hero.lead">A focused home for private tools, utilities and experiments — published from one clean collection.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#tools" data-i18n="hero.browse">Browse collection</a>
-          <a class="btn btn-ghost" href="https://github.com/C2V3ZA/tools" target="_blank" rel="noopener noreferrer" data-i18n="hero.github">Open GitHub ↗</a>
-        </div>
-        <div class="trust-row" aria-label="Site properties">
-          <span><i class="dot"></i><span data-i18n="trust.static">Static</span></span>
-          <span><i class="shield">◇</i><span data-i18n="trust.pages">GitHub Pages</span></span>
-          <span><i class="lock">⌕</i><span data-i18n="trust.private">Private admin</span></span>
-        </div>
-      </div>
-
-      <div class="terminal-card" aria-hidden="true">
-        <div class="terminal-top"><span class="term-dots"><i></i><i></i><i></i></span><span class="term-title">c2v3za@tools</span><span class="term-version">LIVE</span></div>
-        <div class="terminal-body">
-          <div class="terminal-line terminal-muted">$ collection --status</div>
-          <div class="terminal-line"><b class="terminal-accent">[+]</b> <span data-i18n="terminal.loaded">tool index ready</span></div>
-          <div class="terminal-line"><b class="terminal-accent">[+]</b> <span data-i18n="terminal.media">screenshot support enabled</span></div>
-          <div class="terminal-line"><b class="terminal-accent">[+]</b> <span data-i18n="terminal.language">language auto-detected</span></div>
-          <div class="terminal-line"><b class="terminal-accent">[+]</b> <span data-i18n="terminal.deploy">deployment ready</span></div>
-          <div class="terminal-divider"></div>
-          <div class="terminal-stat"><span data-i18n="terminal.repository">repository</span><strong>C2V3ZA/tools</strong></div>
-          <div class="terminal-stat"><span data-i18n="terminal.branch">branch</span><strong>main</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="tools" class="wrap collection-section">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker" data-i18n="tools.kicker">COLLECTION</div>
-          <h2 data-i18n="tools.title">Available tools</h2>
-          <p class="section-sub" data-i18n="tools.subtitle">Search the published collection.</p>
-        </div>
-        <div class="collection-controls">
-          <label class="search">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <span class="sr-only" data-i18n="tools.searchLabel">Search tools</span>
-            <input id="searchInput" type="search" autocomplete="off" spellcheck="false" data-i18n-placeholder="tools.search" placeholder="Search tools...">
-          </label>
-          <span class="count" id="toolCount">0</span>
-        </div>
-      </div>
-
-      <div id="toolGrid" class="tool-grid" aria-live="polite"></div>
-
-      <div id="emptyState" class="state-card">
-        <div class="state-icon">+</div>
-        <h3 data-i18n="empty.title">No tools published yet</h3>
-        <p data-i18n="empty.text">The collection is ready. Publish a tool from the separate local admin panel and it will appear here automatically.</p>
-      </div>
-
-      <div id="errorState" class="state-card is-hidden">
-        <div class="state-icon">!</div>
-        <h3 data-i18n="error.title">Collection unavailable</h3>
-        <p data-i18n="error.text">The public site could not read its tool index. Check the GitHub Pages deployment.</p>
-      </div>
-    </section>
-
-    <section id="about" class="wrap about-section">
-      <div class="about-main">
-        <div class="section-kicker" data-i18n="about.kicker">ABOUT</div>
-        <h2 data-i18n="about.title">Built to stay simple.</h2>
-        <p data-i18n="about.text">C2V3ZA Tools is a static GitHub Pages front end. The publishing admin stays on your own machine, so no admin interface or long-lived write credential is shipped to the public site.</p>
-      </div>
-      <div class="about-card">
-        <div><span data-i18n="about.platform">Platform</span><strong>GitHub Pages</strong></div>
-        <div><span data-i18n="about.repository">Repository</span><strong>C2V3ZA/tools</strong></div>
-        <div><span data-i18n="about.language">Language</span><strong id="languageStatus">EN</strong></div>
-        <div><span data-i18n="about.status">Status</span><strong class="live"><i></i><span data-i18n="about.online">Online</span></strong></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer wrap">
-    <span>© <span id="year"></span> C2V3ZA Tools</span>
-    <span data-i18n="footer.text">Built for GitHub Pages · private publishing workflow</span>
-  </footer>
-
-  <dialog id="toolDialog" class="tool-dialog">
-    <div class="dialog-frame">
-      <button id="dialogClose" class="dialog-close" type="button" aria-label="Close">×</button>
-      <div class="dialog-media"><button id="prevShot" class="gallery-btn" type="button" aria-label="Previous image">‹</button><img id="dialogImage" alt=""><button id="nextShot" class="gallery-btn" type="button" aria-label="Next image">›</button></div>
-      <div class="dialog-body">
-        <div class="dialog-kicker" id="dialogCategory"></div>
-        <h2 id="dialogTitle"></h2>
-        <p id="dialogDescription"></p>
-        <div class="dialog-meta"><span id="dialogVersion"></span><span id="dialogTags"></span></div>
-        <a id="dialogDownload" class="btn btn-primary" href="#" download data-i18n="download">Download tool</a>
+<div class="backdrop" aria-hidden="true"><div class="grid"></div><div class="glow one"></div><div class="glow two"></div></div>
+<header class="header wrap">
+  <a class="brand" href="./"><span class="brand-mark">C2</span><span><strong>C2V3ZA</strong><small>TOOLS</small></span></a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#tools" data-i18n="nav.tools">Tools</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="https://github.com/C2V3ZA/tools" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    <label class="language"><span class="sr-only" data-i18n="lang.label">Language</span><select id="languageSelect"><option value="en">EN</option><option value="de">DE</option></select></label>
+  </nav>
+</header>
+<main>
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <div class="eyebrow"><span></span><span data-i18n="hero.kicker">PRIVATE TOOL COLLECTION</span></div>
+      <h1>C2V3ZA <em>TOOLS.</em></h1>
+      <p data-i18n="hero.lead">A clean, focused home for my tools, utilities and projects.</p>
+      <div class="hero-actions"><a class="btn primary" href="#tools" data-i18n="hero.browse">Browse tools</a><a class="btn ghost" href="https://github.com/C2V3ZA/tools" target="_blank" rel="noopener noreferrer" data-i18n="hero.repo">Open GitHub ↗</a></div>
+      <div class="trust"><span><i></i><span data-i18n="trust.pages">GitHub Pages</span></span><span>⌘ <span data-i18n="trust.static">Static</span></span><span>◈ <span data-i18n="trust.private">Private admin</span></span></div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-head"><span class="lights"><i></i><i></i><i></i></span><strong>c2v3za@tools</strong><span class="live">LIVE</span></div>
+      <div class="terminal-body">
+        <div class="muted">$ collection --status</div>
+        <div><b>[+]</b> <span data-i18n="term.loaded">tool index ready</span></div>
+        <div><b>[+]</b> <span data-i18n="term.screens">screenshot support enabled</span></div>
+        <div><b>[+]</b> <span data-i18n="term.language">language auto-detected</span></div>
+        <div><b>[+]</b> <span data-i18n="term.deploy">deployment ready</span></div>
+        <hr>
+        <div class="terminal-row"><span data-i18n="term.repository">repository</span><strong>C2V3ZA/tools</strong></div>
+        <div class="terminal-row"><span data-i18n="term.branch">branch</span><strong>main</strong></div>
+        <div class="terminal-row"><span data-i18n="term.toolcount">published tools</span><strong id="terminalToolCount">0</strong></div>
       </div>
     </div>
-  </dialog>
+  </section>
+  <section id="tools" class="wrap section">
+    <div class="section-head"><div><div class="kicker" data-i18n="tools.kicker">COLLECTION</div><h2 data-i18n="tools.title">Available tools</h2><p data-i18n="tools.subtitle">Search and open a tool.</p></div><div class="controls"><label class="search"><span>⌕</span><span class="sr-only" data-i18n="tools.searchlabel">Search tools</span><input id="searchInput" type="search" placeholder="Search tools..." data-i18n-placeholder="tools.search"></label><span id="toolCount" class="count">0</span></div></div>
+    <div id="toolGrid" class="tool-grid" aria-live="polite"></div>
+    <div id="emptyState" class="state"><div class="state-icon">+</div><h3 data-i18n="empty.title">No tools published yet</h3><p data-i18n="empty.text">Publish a tool from the separate local admin.</p></div>
+    <div id="errorState" class="state hidden"><div class="state-icon">!</div><h3 data-i18n="error.title">Collection unavailable</h3><p data-i18n="error.text">The tool index could not be loaded.</p></div>
+  </section>
+  <section id="about" class="wrap about section">
+    <div><div class="kicker" data-i18n="about.kicker">ABOUT</div><h2 data-i18n="about.title">Built for a focused collection.</h2><p data-i18n="about.text">C2V3ZA Tools is a static GitHub Pages site. The private admin stays on your machine and is never shipped with the public site.</p></div>
+    <div class="about-card"><div><span data-i18n="about.platform">Platform</span><strong>GitHub Pages</strong></div><div><span data-i18n="about.repo">Repository</span><strong>C2V3ZA/tools</strong></div><div><span data-i18n="about.language">Language</span><strong id="languageStatus">EN</strong></div><div><span data-i18n="about.status">Status</span><strong class="online"><i></i><span data-i18n="about.online">Online</span></strong></div></div>
+  </section>
+</main>
+<footer class="wrap footer"><span>© <span id="year"></span> C2V3ZA Tools</span><span data-i18n="footer">GitHub Pages · private publishing workflow</span></footer>
+<dialog id="toolDialog" class="dialog"><div class="dialog-frame"><button id="dialogClose" class="close" type="button" aria-label="Close">×</button><div class="dialog-media"><button id="prevShot" class="gallery" type="button" aria-label="Previous">‹</button><img id="dialogImage" alt=""><button id="nextShot" class="gallery" type="button" aria-label="Next">›</button></div><div class="dialog-body"><span id="dialogCategory" class="dialog-kicker"></span><h2 id="dialogTitle"></h2><p id="dialogDescription"></p><div class="dialog-meta"><span id="dialogVersion"></span><span id="dialogTags"></span></div><a id="dialogDownload" class="btn primary" href="#" download data-i18n="download">Download tool</a></div></div></dialog>
 </body>
 </html>
