@@ -1,33 +1,3 @@
 {
-  "tools": [
-    {
-      "slug": "c2v3za-multi-py",
-      "category": "multitool",
-      "version": "1.0.0",
-      "name": {
-        "de": "C2V3ZA Multi-Tool",
-        "en": "C2V3ZA Multi-Tool"
-      },
-      "description": {
-        "de": "Kommt bald!",
-        "en": "Coming Soon!"
-      },
-      "tags": [
-        "osint",
-        "network",
-        "server",
-        "linux",
-        "windows"
-      ],
-      "published": true,
-      "screenshots": [
-        "assets/screenshots/c2v3za-multi-py-01.png",
-        "assets/screenshots/c2v3za-multi-py-02.png",
-        "assets/screenshots/c2v3za-multi-py-03.png"
-      ],
-      "download": "downloads/c2v3za-multi-py.zip",
-      "publishedAt": "2026-09-27T11:09:19.438Z",
-      "updatedAt": "2026-09-27T11:09:19.438Z"
-    }
-  ]
+  "tools": []
 }
